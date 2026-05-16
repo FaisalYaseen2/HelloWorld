@@ -1,4 +1,5 @@
 pipeline {
+
     agent any
 
     stages {
@@ -23,6 +24,7 @@ pipeline {
     }
 
     post {
+
         always {
             echo 'Pipeline Finished'
         }
