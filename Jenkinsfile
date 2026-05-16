@@ -2,11 +2,15 @@ pipeline {
 
     agent any
 
+    environment {
+        VERSION = '1.0'
+    }
+
     stages {
 
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo "Version is ${VERSION}"
             }
         }
 
@@ -20,21 +24,6 @@ pipeline {
             steps {
                 echo 'Deploying....'
             }
-        }
-    }
-
-    post {
-
-        always {
-            echo 'Pipeline Finished'
-        }
-
-        success {
-            echo 'Pipeline Successful'
-        }
-
-        failure {
-            echo 'Pipeline Failed'
         }
     }
 }
